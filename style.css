@@ -16,6 +16,20 @@ body {
   /*box-sizing: border-box;*/
 }
 
+.main {
+  padding: 20px;
+  margin: 20px;
+}
+
+.logo {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  color: rgb(200,207,213);
+  font-weight: 300;
+  /*text-align: right;*/
+}
+
 .charts {
   position: absolute;
   left: 25%;
@@ -45,12 +59,14 @@ body {
 .donut-inner div {
   color: #FFFFFF;
   font-size: 50px;
+  font-size: 5vw;
   margin-bottom: 5px;
   margin-top: 0;
 }
 .donut-inner span {
-    color: rgb(200,207,213);
+   color: rgb(200,207,213);
    font-size: 16px;
+   font-size: 2vw;
 }
 
 .applicants {
@@ -71,4 +87,13 @@ body {
 .applicants div{
   font-family: gothThin;
   padding: 5px;
+  font-size: 16px;
+  font-size: 1.5vw;
+}
+
+@media(max-width: 750px) {
+  .applicants {
+    margin-left: 23%;
+    margin-right: 23%;
+  }
 }

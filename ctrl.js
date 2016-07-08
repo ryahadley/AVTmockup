@@ -46,7 +46,7 @@ angular.module('app').controller('graphCtrl', function($scope, graphSvc) {
             var data = {
               labels: [
                 "Applicants",
-                "Total"
+                "Difference"
               ],
               datasets: [
                   {
@@ -156,6 +156,7 @@ angular.module('app').controller('graphCtrl', function($scope, graphSvc) {
                     ticks: {
                       beginAtZero: false,
                       min: 0,
+                      steps: 3,
                       stepSize: 50,
                       fontFamily: 'gothThin',
                       fontColor: '#FFFFFF'
