@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>chartjs</title>
+    <link rel="stylesheet" href="./style.css" media="screen" title="no title" charset="utf-8">
+
+    <!-- Nedds to load angular and charts before charts are drawn -->
+    <!-- Choose chart.js instead of D3 for time constraint -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+
+    <!-- added jquery to make selecting elements easier -->
+    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+
+    <!-- Chart.js cdn -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js'></script>
+
+    </head>
+  <body ng-controller="graphCtrl">
+
+    <!-- donut chart -->
+    <div class="charts">
+      <canvas id="mycanvas" max-width="200" max-height="200"></canvas>
+      <div class="donut-inner">
+        <div>{{applicants}}</div>
+        <span>APPLICANTS</span>
+      </div>
+      <div class="applicants">
+        <div>TOTAL</div> <div>&middot;</div> <div>{{totalViews}}</div>
+      </div>
+    </div>
+
+    <!-- line chart -->
+    <div class="chartss">
+      <canvas id="myline" max-width="350" max-height="350"></canvas>
+    </div>
+
+    <!-- local files -->
+      <script src="app.js"></script>
+      <script src="service.js"></script>
+      <script src="ctrl.js"></script>
+  </body>
+</html>
