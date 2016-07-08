@@ -1,8 +1,17 @@
-angular.module('app').controller('graphCtrl', function($scope, graphSvc) {
+angular.module('app').controller('graphCtrl', function($scope, graphSvc, $timeout) {
 
   $scope.graphData = function() {
+
     graphSvc.getData()
     .then(function(response) {
+
+      //trying fix plot points by removing old data
+      $timeout(function() {
+        $scope.clicks = null;
+        $scope.labels = null;
+        var myLineChart = null;
+      });
+
       console.log(response);
 
       // applicant graph
@@ -122,7 +131,7 @@ angular.module('app').controller('graphCtrl', function($scope, graphSvc) {
         ]
     };
 
-      var myLineChart = new Chart(ctxx, {
+      myLineChart = new Chart(ctxx, {
           type: 'line',
           data: dumdata,
           options: {
@@ -131,25 +140,25 @@ angular.module('app').controller('graphCtrl', function($scope, graphSvc) {
             },
             scaleLabel: {
               fontFamily: 'gothM',
-              fontColor: '#FFFFFF',
+              fontColor: 'rgb(200,207,213)',
             },
             scales : {
                 xAxes : [ {
                     gridLines : {
                         display : false,
-                        color: "#FFFFFF",
+                        color: "rgb(200,207,213)",
                         lineWidth: 3
                         // offsetGridLines: true
                     },
                     ticks: {
                       fontFamily: 'gothThin',
-                      fontColor: "#FFFFFF"
+                      fontColor: "rgb(200,207,213)"
                     }
                 } ],
                 yAxes : [ {
                     gridLines : {
                         display : false,
-                        color: "#FFFFFF",
+                        color: "rgb(200,207,213)",
                         lineWidth: 3,
                         offsetGridLines: true
                       },
@@ -158,8 +167,8 @@ angular.module('app').controller('graphCtrl', function($scope, graphSvc) {
                       min: 0,
                       steps: 3,
                       stepSize: 50,
-                      fontFamily: 'gothThin',
-                      fontColor: '#FFFFFF'
+                      fontFamily: 'gothM',
+                      fontColor: 'rgb(200,207,213)'
                     }
                 } ],
                 padding: 10

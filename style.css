@@ -9,25 +9,59 @@
 }
 
 body {
-  background-color: #3F4A5B;
+  background-color: white;
   color: white;
   margin: 0 auto;
   font-family: gothM;
+  width: 100%;
+  height: 100%;
   /*box-sizing: border-box;*/
 }
 
 .main {
+  background-color: #3F4A5B;
+  width: 90%;
+  height: 80vh;
   padding: 20px;
   margin: 20px;
+  border-radius: 20px;
 }
 
 .logo {
   position: fixed;
-  top: 5%;
-  right: 5%;
+  top: 8%;
+  right: 8%;
   color: rgb(200,207,213);
   font-weight: 300;
   /*text-align: right;*/
+}
+
+.button {
+  position: fixed;
+  top: 8%;
+  left: 8%;
+  font-weight: 300;
+}
+
+.button button {
+  padding: 5px;
+  color: rgb(200,207,213);
+  background-color: rgb(21,164,250);
+  text-align: center;
+  margin: auto;
+  font-size: 16px;
+  padding: 5px 15px 5px 15px;
+  /*border: none;*/
+  border-top: none;
+  border-left: none;
+  border-radius: 30px;
+  margin-bottom: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.button button:hover {
+  opacity: 0.9;
 }
 
 .charts {
@@ -93,7 +127,7 @@ body {
 
 @media(max-width: 750px) {
   .applicants {
-    margin-left: 23%;
-    margin-right: 23%;
+    margin-left: 21%;
+    margin-right: 21%;
   }
 }
